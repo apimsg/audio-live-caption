@@ -1,0 +1,12 @@
+.venv/
+models/
+.tmp/
+__pycache__/
+*.pyc
+records/
+overlay_pos.json
+dist/
+
+*-16k*.wav
+null
+.cache/

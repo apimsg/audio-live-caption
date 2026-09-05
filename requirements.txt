@@ -1,0 +1,22 @@
+# 浏览器控制中心
+streamlit>=1.57
+
+# 识别后端：faster-whisper（CTranslate2）—— 默认且唯一需要装的识别后端
+# 注：faster-whisper 会带进 PyAV（av），它就是「本地视频抽音轨」的解码器，别当多余依赖删掉
+faster-whisper>=1.1
+# openai-whisper 只是可选回退实现，它会拖进 PyTorch（约 2GB），所以默认不装。
+# 想用原始实现做对比再手动装：  .venv\Scripts\pip install openai-whisper
+# openai-whisper
+
+# 音频采集：麦克风 + WASAPI 系统声音回环
+sounddevice
+numpy
+PyAudioWPatch
+
+# 繁→简（字幕里的中文统一成简体）：装了就用 OpenCC 词库 + 词级校正，
+# 没装会自动退回内置 288 字对照表（han_convert.py），功能不依赖它
+zhconv
+
+# 实时翻译成中文（按需选装）
+translators
+# argostranslate        # 纯离线翻译（需另行下载语言模型）
